@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mời nhập thông tin</title>
+    <!-- Thêm Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2 class="mb-4">NHẬP THÔNG TIN</h2>
+        <form id="myForm">
+            <div class="form-group">
+                <label for="hoTen">Họ và tên:</label>
+                <input type="text" id="hoTen" name="hoTen" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tuoi">Tuổi:</label>
+                <input type="number" id="tuoi" name="tuoi" class="form-control" required>
+               
+            </div>
+
+            <div class="form-group">
+                <label for="diaChi">Địa chỉ:</label>
+                <input type="text" id="diaChi" name="diaChi" class="form-control" required>
+            
+            </div>
+
+            <div class="form-group">
+                <label for="soDienThoai">Số điện thoại:</label>
+                <input type="tel" id="soDienThoai" name="soDienThoai" class="form-control" required>
+            
+            </div>
+
+            <button type="button" onclick="submitForm()" class="btn btn-primary">Gửi thông tin</button>
+            
+        </form>
+    </div>
+
+    <!-- Thêm Bootstrap JS và Popper.js (cần thiết cho Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function submitForm() {
+            var formData = new FormData(document.getElementById('myForm'));
+
+            fetch('https://script.google.com/macros/s/AKfycbwq1oSLFsZ6gmDp4fDGFQ8_fUEpAN0ylDxvl4Nh/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(response => {
+                console.log('Success:', response);
+                // Redirect to the new page after successful submission
+                window.location.href = 'questions.html';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors, e.g., show an error message
+            });
+        }
+    </script>
+</body>
+</html>

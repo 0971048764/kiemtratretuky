@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi về tự kỷ</title>
+</head>
+<body>
+    <h2>Câu hỏi về tự kỷ</h2>
+    
+    <form id="autismQuestions">
+        <div>
+            <p>1. Trẻ có dấu hiệu " Không bao giờ phát ra những âm thanh?</p>
+            <label>
+                <input type="radio" name="socialInteraction" value="yes"> Có
+            </label>
+            <label>
+                <input type="radio" name="socialInteraction" value="no"> Không
+            </label>
+        </div>
+
+        <div>
+            <p>2. Trẻ có dấu hiệu "Không biết thể hiện gì khi đói,ướt do đái,...."?</p>
+            <label>
+                <input type="radio" name="routineHabits" value="yes"> Có
+            </label>
+            <label>
+                <input type="radio" name="routineHabits" value="no"> Không
+            </label>
+        </div>
+
+        <div>
+            <p>3. Trẻ có dấu hiệu" Không chợp mắt /giật mình khi có tiếng động mạnh"?</p>
+            <label>
+                <input type="radio" name="focus" value="yes"> Có
+            </label>
+            <label>
+                <input type="radio" name="focus" value="no"> Không
+            </label>
+        </div>
+
+        <h2> Vận động thô</h2>
+        <div>
+            <p>4. Trẻ có giảm vận động ở tay/chân hoặc mềm nhẽo toàn thân không?</p>
+            <label>
+                <input type="radio" name="specialInterests" value="yes"> Có
+            </label>
+            <label>
+                <input type="radio" name="specialInterests" value="no"> Không
+            </label>
+        </div>
+
+        <div>
+            <p>5.Trẻ có bị hạn chế vận động tại các khớp lớn không?(háng,gối,cổ chân,vai,cổ tay,....)</p>
+            <label>
+                <input type="radio" name="discomfort" value="yes"> Có
+            </label>
+            <label>
+                <input type="radio" name="discomfort" value="no"> Không
+            </label>
+        </div>
+
+        <button type="button" onclick="submitAutismQuestions()">Gửi câu trả lời</button>
+    </form>
+
+    <script>
+        function submitAutismQuestions() {
+            // Xử lý câu trả lời ở đây và chuyển hướng nếu cần
+            // Ví dụ: Lưu câu trả lời vào cơ sở dữ liệu hoặc hiển thị thông điệp
+            alert('Cảm ơn bạn đã trả lời câu hỏi!');
+        }
+    </script>
+</body>
+</html>
